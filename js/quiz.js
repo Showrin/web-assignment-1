@@ -198,11 +198,12 @@ for (let i = 0; i < desiredAmountOfQuestion; i++) {
   const isCorrect = givenAnswer.toLowerCase() === questionDetails.correctOption;
   const questionContainer = `<div class="question-container">
     <div class="question">
-      ${questionDetails.question}
+      ${i + 1}. ${questionDetails.question}
     </div>
     <div class="answer">
       You guessed ${givenAnswer}) ${questionDetails.options[givenAnswer]}
-      <br>
+    </div>
+    <div class="${isCorrect ? "correct" : "incorrect"}">
       ${isCorrect ? "CORRECT" : `INCORRECT: The correct answer is ${questionDetails.correctOption}) ${questionDetails.options[questionDetails.correctOption]}`}
     </div>
   </div>`;
@@ -215,8 +216,9 @@ for (let i = 0; i < desiredAmountOfQuestion; i++) {
 }
 
 percentageOfCorrectAnswers = ((amountOfCorrectAnswers / desiredAmountOfQuestion) * 100).toFixed(1);
-resultText = `<div>
-  You answered ${amountOfCorrectAnswers} out of ${desiredAmountOfQuestion} questions correctly (${percentageOfCorrectAnswers}%).
+resultText = `<div class="result">
+  You answered <b>${amountOfCorrectAnswers}</b> out of ${desiredAmountOfQuestion} questions correctly <b>(${percentageOfCorrectAnswers}%)</b>.
 </div>`;
 
-resultContainer.innerHTML = resultContainer.innerHTML + resultText;
+resultContainer.innerHTML = resultContainer.innerHTML + resultText + `
+<a class="retake-link" href="/quiz.html">Retake the Quiz</a>`;
