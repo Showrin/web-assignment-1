@@ -2,24 +2,32 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/styles.css">
+  <title>Home</title>
 </head>
 
 <body>
+  <header>
+    <span class="brand-name">WEB Project</span>
     <nav>
-        <li>Home</li>
-        <li>Converter</li>
-        <li>Take a Quize</li>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="convert.html">Converter</a></li>
+        <li><a href="quiz.html">Take a Quize</a></li>
+      </ul>
     </nav>
-    <main>
-        Our content
-    </main>
-    <footer>
-        Copywrite 2021
-    </footer>
+  </header>
+  <main>
+    <div id="js-fortune-box" class="fortune-box"></div>
+  </main>
+  <footer>
+    Copywrite 2021
+  </footer>
+
+  <script src="./js/fortune-generator.js"></script>
 </body>
 
 </html>
