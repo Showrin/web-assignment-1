@@ -1,0 +1,83 @@
+:root {
+  --primary: #2F5D62;
+  --secondary: #DFEEEA;
+  --white: #ffffff;
+  --black: #000000;
+}
+
+body {
+  margin: 0;
+  background-color: var(--secondary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+header,
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 20px;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav ul {
+  display: block;
+  list-style: none;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+nav ul li:last-child {
+  margin-right: 0;
+}
+
+footer {
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.brand-name {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.fortune-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--primary);
+  font-size: 32px;
+  text-align: center;
+  font-weight: bold;
+  border: 3px solid var(--primary);
+  padding: 30px;
+  box-sizing: border-box;
+  border-radius: 50px;
+  border-top-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
