@@ -1,5 +1,5 @@
 const currencies = {
-  used: {
+  usd: {
     gbp: 2.03032,
     cad: 1.01941,
     eur: 1.41544,
@@ -30,3 +30,19 @@ const currencies = {
     eur: 1.60329,
   },
 };
+const inputFields = document.getElementsByTagName("input");
+
+for (let i = 0; i < inputFields.length; i++) {
+  inputFields[i].addEventListener("keyup", event => {
+    const inputValue = event.target.value;
+    const inputCurrencyType = event.target.id.split('-').pop();
+    const currencyConversionValues = currencies[inputCurrencyType];
+
+    for (let currency in currencyConversionValues) {
+      const input = document.getElementById(`js-currency-${currency}`);
+      const convertateValue = currencyConversionValues[currency] * inputValue;
+
+      input.value = convertateValue;
+    }
+  })
+}
