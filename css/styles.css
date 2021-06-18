@@ -3,6 +3,11 @@
   --secondary: #DFEEEA;
   --white: #ffffff;
   --black: #000000;
+  --error: #D83A56;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
@@ -36,6 +41,7 @@ footer {
   background-color: var(--primary);
   color: var(--white);
   padding: 20px;
+  height: 80px;
 }
 
 nav {
@@ -60,12 +66,18 @@ nav ul li:last-child {
   margin-right: 0;
 }
 
+main {
+  min-height: calc(100vh - 80px - 60px);
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 footer {
   justify-content: center;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  height: 60px;
 }
 
 .brand-name {
@@ -74,30 +86,22 @@ footer {
 }
 
 .fortune-box {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  max-width: 700px;
+  width: 100%;
   color: var(--primary);
   font-size: 32px;
   text-align: center;
   font-weight: bold;
   border: 3px solid var(--primary);
   padding: 30px;
-  box-sizing: border-box;
   border-radius: 50px;
   border-top-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
 
 .converter-form {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   padding: 30px;
   border: 3px solid var(--primary);
-  box-sizing: border-box;
   border-radius: 5px;
   width: 100%;
   max-width: 500px;
@@ -132,4 +136,56 @@ footer {
   outline-color: var(--primary);
   color:  var(--primary);
   flex-grow: 1;
+  border-radius: 3px;
+}
+
+.result-container {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 700px;
+}
+
+.question-container {
+  margin-bottom: 35px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--primary);
+}
+
+.question {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.answer {
+  margin-bottom: 5px;
+}
+
+.correct {
+  font-weight: bold;
+}
+
+.incorrect {
+  font-weight: bold;
+  color: var(--error);
+}
+
+.result {
+  border: 3px solid var(--primary);
+  padding: 20px;
+  border-radius: 5px;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.retake-link {
+  font-weight: bold;
+  padding: 10px;
+  background-color: var(--primary);
+  color: var(--white);
+  border-radius: 5px;
+  display: inline-block;
+  align-self: center;
 }
